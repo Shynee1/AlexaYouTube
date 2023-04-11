@@ -83,14 +83,14 @@ public class RandomShyneeVideo {
             YouTube.PlaylistItems.List request = youtube.playlistItems().list(Collections.singletonList("snippet"));
             PlaylistItemListResponse videoInfo;
             if (pageToken.equalsIgnoreCase("null")){
-                videoInfo = request.setKey("AIzaSyC55eg19qu-1ZT0hdSh-2fkpGGcz1K14aE")
-                        .setPlaylistId("UUosMwN6Jsr7FNsGz0O4SJnQ")
+                videoInfo = request.setKey(Constants.API_KEY)
+                        .setPlaylistId(Constants.PLAYLIST_URL)
                         .setMaxResults(50L)
                         .execute();
             }
             else{
-                videoInfo = request.setKey("AIzaSyC55eg19qu-1ZT0hdSh-2fkpGGcz1K14aE")
-                        .setPlaylistId("UUosMwN6Jsr7FNsGz0O4SJnQ")
+                videoInfo = request.setKey(Constants.API_KEY)
+                        .setPlaylistId(Constants.PLAYLIST_URL)
                         .setPageToken(pageToken)
                         .setMaxResults(50L)
                         .execute();

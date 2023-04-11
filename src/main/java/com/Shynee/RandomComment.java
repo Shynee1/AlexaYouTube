@@ -86,13 +86,13 @@ public class RandomComment {
             YouTube.CommentThreads.List request = youtube.commentThreads().list(Collections.singletonList("snippet"));
             CommentThreadListResponse videoInfo = null;
             if (pageToken.equalsIgnoreCase("null")){
-                videoInfo = request.setKey("AIzaSyC55eg19qu-1ZT0hdSh-2fkpGGcz1K14aE")
+                videoInfo = request.setKey(Constants.API_KEY)
                         .setMaxResults(100L)
                         .setVideoId(videoID)
                         .execute();
             }
             else{
-                videoInfo = request.setKey("AIzaSyC55eg19qu-1ZT0hdSh-2fkpGGcz1K14aE")
+                videoInfo = request.setKey(Constants.API_KEY)
                         .setMaxResults(100L)
                         .setPageToken(pageToken)
                         .setVideoId(videoID)
